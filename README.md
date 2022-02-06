@@ -1,20 +1,39 @@
 # Node Template Application
 
-## This is an example of an personal template for node applications
+This is an example of a personal template for node applications
 
-### 📄 Steps
+## Description
 
-- All source files in `./src`
+### 📔 Includes
 
-- New App (Without package.json)
+- Node.js
+- Typescript
+- Eslint
+- Babel
+- Some @types
+
+### 🗒️ Steps
+
+> All source files in `./src`
+
+> All production files in `./dist`
+
+- Install all modules of this template
+  - `npm install`
+
+- Install a module
   - `npm i {module} --save-dev`
 
-- Module (With package.json)
-  - `npm update`
+### 📝 Tasks
 
-- Run Typescript Converter
-  - `tsc` - output in `./dist`
+- Run dev task
+  - `npm run dev`
+  > Run the server for development
 
-- yet to do...?
+- Run build task
+  - `npm run build`
+  > Generate on `./dist` processed files
 
-- Profit!
+- Run start task
+  - `npm run start`
+  > Start trigger to production environment
