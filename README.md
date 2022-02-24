@@ -15,7 +15,7 @@ This is an example of a personal template for node applications
 ### 🗒️ Steps
 
 > All source files in `./src`
-
+>
 > All production files in `./dist`
 
 - Install all modules of this template

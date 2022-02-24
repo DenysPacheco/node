@@ -1,18 +1,22 @@
 import express from 'express'
-const router = express.Router()
+import index from '../components/index/index'
+import birds from '../components/birds/birds'
+import about from '../components/about/about'
+import items from '../components/items/items'
+import json from '../components/json/json'
+import { Express } from 'express-serve-static-core'
 
-// middleware that is specific to this router
-router.use((req, res, next) => {
-    console.log('Time: ', Date.now())
-    next()
-})
-// define the home page route
-router.get('/', (req, res) => {
-    res.send('Birds home page')
-})
-// define the about route
-router.get('/about', (req, res) => {
-    res.send('About birds')
-})
+// const router = express.Router()
 
-export default router
+// eslint-disable-next-line space-before-function-paren
+function start(app: Express): void {
+    app.use(express.json())
+
+    app.use('/', index)
+    app.use('/birds', birds)
+    app.use('/about', about)
+    app.use('/items', items)
+    app.use('/json', json)
+}
+
+export default start

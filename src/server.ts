@@ -1,16 +1,12 @@
 import express from 'express'
-import path from 'path'
-import router from './routes/routes'
-import navbar from './components/navbar/navbar'
+// import path from 'path'
+import start from './routes/routes'
 
 const app = express()
-const port = 3000
+// app.set('view engine', 'pug')
+// app.engine('html', require('ejs').renderFile)
+const port = process.env.PORT || 3000
 
-app.use('/birds', router)
-app.use('/navbar', navbar)
+start(app)
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/templates/index.html'))
-})
-
-app.listen(port, () => console.log(`Server listening on port ${port}!`))
+app.listen(port, () => console.log(`Server listening on port ${port}...`))

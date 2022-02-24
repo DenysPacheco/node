@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
+        type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <title>About</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Express HTML</a>
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="/birds">Birds</a>
+                </li>
+                <li class="active">
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/items">Items</a>
+                </li>
+                <li>
+                    <a href="/json">Json</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron" style="padding:40px;">
+        <h1>Hello, visitor!</h1>
+        <p>Curious about routes and node? See more bellow.
+        </p>
+        <p><a class="btn btn-primary btn-lg" href="https://nodejs.org/en/" role="button" target="_blank">Learn
+                Node.js</a></p>
+        <br>
+        <p>This is just a test about node.js and routes, especially the architecture and components.</p>
+        <p>The structure of <samp>routes.ts</samp>:</p>
+        <pre>
+            import express from 'express'
+            import index from '../components/index/index'
+            import birds from '../components/birds/birds'
+            import about from '../components/about/about'
+            import items from '../components/items/items'
+            import json from '../components/json/json'
+
+            // const router = express.Router()
+
+            // eslint-disable-next-line space-before-function-paren
+            function start(app: any) {
+                app.use(express.json())
+
+                app.use('/', index)
+                app.use('/birds', birds)
+                app.use('/about', about)
+                app.use('/items', items)
+                app.use('/json', json)
+            }
+
+            export default start
+
+        </pre>
+        <br>
+        <p>And <samp>server.ts</samp:< /p>
+                <pre>
+            import express from 'express'
+            // import path from 'path'
+            import start from './routes/routes'
+
+            const app = express()
+            // app.set('view engine', 'pug')
+            // app.engine('html', require('ejs').renderFile)
+            const port = process.env.PORT || 3000
+
+            start(app)
+
+            app.listen(port, () => console.log(`Server listening on port ${port}...`))
+        </pre>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+    "nome": "Alberto",
+    "idade": 20,
+    "sexo": "m",
+    "livros": [
+        {
+            "id": 1,
+            "nome": "Sociedade dos poetas Mortos"
+        },
+        {
+            "id": 2,
+            "nome": "Contos da Clarice"
+        },
+        {
+            "id": 3,
+            "nome": "O que não fazer"
+        }
+    ]
+}
